@@ -5,4 +5,4 @@
 [uicore](https://suiramus.github.io/ui-test/uicore/)
 
 ### CSS :has test
-[uicore](https://suiramus.github.io/ui-test/has/)
+[CSS :has](https://suiramus.github.io/ui-test/has/)
