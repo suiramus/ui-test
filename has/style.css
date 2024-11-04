@@ -11,11 +11,11 @@ svg:not([fill]) { fill: currentColor; }
 /* Fluid Typography */
 /* https://www.sitepoint.com/fluid-typography-css-clamp-function/ */
 /* https://www.sitepoint.com/fluid-typography-css-clamp-function/ */
-h1 { font-size: clamp(2.5rem, calc(2.2rem + 1.5vw), 4rem); }
-h2 { font-size: clamp(2rem, calc(1.7rem + 1.5vw), 3.5rem); }
-h3 { font-size: clamp(2rem, calc(1.8rem + 1vw), 3rem); }
-h4 { font-size: clamp(1.5rem, calc(1.3rem + 1vw), 2.5rem); }
-h5 { font-size: clamp(1rem, calc(0.8rem + 1vw), 2rem); }
+h1 { font-size: clamp(2.5rem, calc(2.2rem + 1.5vw), 3.5rem); }
+h2 { font-size: clamp(2rem, calc(1.7rem + 1.5vw), 3rem); }
+h3 { font-size: clamp(2rem, calc(1.8rem + 1vw), 2.5rem); }
+h4 { font-size: clamp(1.5rem, calc(1.3rem + 1vw), 2rem); }
+h5 { font-size: clamp(1rem, calc(0.8rem + 1vw), 1.5rem); }
 h6 { font-size: 1rem; }
 
 :root {
@@ -71,24 +71,25 @@ ul.top-nav li > a:hover {
 	color: var(--color-primary);
 }
 
-ul.submenu {
-	display: none;
-}
-
 nav li:has(ul) > a::after {
 	content: "+"; margin-left: 6px;
 }
 
 li:has(ul.submenu) { position: relative; }
 
-li:has(ul):hover ul.submenu  {
+ul.submenu {
+	display: none;
 	padding-top: 14px;
-	display: block;
 	max-width: max-content;
 	min-width: 200px;
 	position: absolute;
 	top: 100%;
 	left: 0;
+	transition: all .8s;
+}
+
+li:has(ul):hover ul.submenu  {
+	display: block;
 }
 
 ul.submenu a {
@@ -135,17 +136,20 @@ p.short	{
 
 /* https://www.youtube.com/watch?v=VW8tq3rfhUo */
 
-ul.anim {}
+ul.anim {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+}
 
 ul.anim li {
 	display: inline-block;
 	width: 40px;
-	height: 80px;
+	height: 100px;
 	list-style: none;
 	opacity: .4;
 	background: orange;
 	transition: all .3s;
-	margin: 5px;
 }
 
 .anim li:has(+ li + li:hover){
@@ -169,4 +173,34 @@ ul.anim li {
 
 .anim li:hover + li + li {
 	transform: scale(1.1);
+}
+
+/* SECTION */
+
+.section {
+	width: 100%;
+}
+
+p + p {
+	margin: 20px 0;
+}
+
+.two-cards {
+	display: flex;
+	align-items: center;
+	/* gap: 30px; */
+	background: rgba(255,158,27,.1);
+}
+
+.one-card-img {
+	/* width: calc(50% - 30px); */
+}
+
+.one-card-img img {
+	width: 100%;
+	display: block;
+}
+
+.one-card-text {
+	padding: 20px 30px;
 }
