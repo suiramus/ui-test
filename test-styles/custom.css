@@ -1,0 +1,32 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: block !important;
+	max-width: 100% !important;
+	background: rgb(248, 248, 248);
+}
+.small-container {max-width: 1200px; margin: 20px auto; padding: 20px;}
+nav {
+	margin-bottom: 30px;
+}
+
+nav a {
+	position: relative;
+	display: inline-block;
+}
+
+nav a::after {
+	content: " | ";
+	text-decoration: none;
+	color: #333;
+}
+
+nav a:last-child:after {
+	content: "";
+}
+
+nav a.active {
+
+}
