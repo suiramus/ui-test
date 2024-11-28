@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Masonry & Photoswipe</title>
+	<link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
+	<link rel="stylesheet" href="vendor/photoswipe/default-skin.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="gallery gallery-x">
+		<div class="item"><a href="img/img-01.jpg" data-size="1280x853"><img src="img/img-01.jpg"></a></div>
+		<div class="item"><a href="img/img-02.jpg" data-size="1280x1920"><img src="img/img-02.jpg"></a></div>
+		<div class="item"><a href="img/img-03.jpg" data-size="1280x854"><img src="img/img-03.jpg"></a></div>
+		<div class="item"><a href="img/img-04.jpg" data-size="1280x1707"><img src="img/img-04.jpg"></a></div>
+		<div class="item"><a href="img/img-05.jpg" data-size="1280x848"><img src="img/img-05.jpg"></a></div>
+		<div class="item"><a href="img/img-06.jpg" data-size="1280x853"><img src="img/img-06.jpg"></a></div>
+		<div class="item"><a href="img/img-07.jpg" data-size="1280x1835"><img src="img/img-07.jpg"></a></div>
+		<div class="item"><a href="img/img-08.jpg" data-size="1280x1920"><img src="img/img-08.jpg"></a></div>
+		<div class="item"><a href="img/img-09.jpg" data-size="1280x1920"><img src="img/img-09.jpg"></a></div>
+		<div class="item"><a href="img/img-10.jpg" data-size="1280x810"><img src="img/img-10.jpg"></a></div>
+		<div class="item"><a href="img/img-11.jpg" data-size="1280x853"><img src="img/img-11.jpg"></a></div>
+	</div>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Clasele de galerii pe care le verificăm
+			var galleryClasses = ['.gallery', '.alt-gallery', '.another-gallery-class'];
+			var galleryFound = false;
+
+			// Verificăm dacă există cel puțin una dintre clasele specificate
+			galleryClasses.forEach(function (galleryClass) {
+				if (document.querySelector(galleryClass)) {
+					galleryFound = true;
+					console.log(`Galerie găsită: ${galleryClass}`);
+				}
+			});
+
+			// Dacă găsim o galerie, adăugăm structura HTML pentru PhotoSwipe
+			if (galleryFound) {
+				console.log('Adăugăm structura PhotoSwipe în DOM.');
+				var pswpHTML = `
+					<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="pswp__bg"></div>
+						<div class="pswp__scroll-wrap">
+							<div class="pswp__container">
+								<div class="pswp__item"></div>
+								<div class="pswp__item"></div>
+								<div class="pswp__item"></div>
+							</div>
+							<div class="pswp__ui pswp__ui--hidden">
+								<div class="pswp__top-bar">
+									<div class="pswp__counter"></div>
+									<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+									<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+									<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+									<div class="pswp__preloader">
+										<div class="pswp__preloader__icn">
+											<div class="pswp__preloader__cut">
+												<div class="pswp__preloader__donut"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+									<div class="pswp__share-tooltip"></div>
+								</div>
+								<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+								<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+								<div class="pswp__caption">
+									<div class="pswp__caption__center"></div>
+								</div>
+							</div>
+						</div>
+					</div>`;
+				document.body.insertAdjacentHTML('beforeend', pswpHTML);
+			} else {
+				console.log('Nicio galerie nu a fost găsită.');
+			}
+		});
+
+</script>
+<script src="vendor/masonry.pkgd.min.js"></script>
+<script src="vendor/imagesloaded.pkgd.min.js"></script>
+<script src="vendor/photoswipe/photoswipe.min.js"></script>
+<script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+<script> 
+	document.addEventListener('DOMContentLoaded', function () {
+		var galleries = document.querySelectorAll('.gallery, .alt-gallery, .another-gallery-class');
+
+		galleries.forEach(function (gallery) {
+			var msnry = new Masonry(gallery, {
+				itemSelector: '.item',
+				columnWidth: '.item',
+				percentPosition: true
+			});
+
+			imagesLoaded(gallery).on('progress', function () {
+				msnry.layout();
+			});
+
+			var items = [];
+			var links = gallery.querySelectorAll('a');
+
+			// Populatează array-ul items
+			links.forEach(function (link) {
+				var size = link.getAttribute('data-size').split('x');
+				items.push({
+					src: link.getAttribute('href'),
+					w: parseInt(size[0], 10),
+					h: parseInt(size[1], 10)
+				});
+			});
+
+			links.forEach(function (link, index) {
+				link.addEventListener('click', function (event) {
+					event.preventDefault();
+
+					// Inițializează PhotoSwipe cu informații corecte
+					var pswpElement = document.querySelector('.pswp');
+					var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+						index: index,
+						bgOpacity: 0.9,
+						loop: false,
+						arrowKeys: false,
+						showHideOpacity: true
+					});
+
+					gallery.init();
+				});
+			});
+		});
+	});
+
+</script>
+</body>
+</html>

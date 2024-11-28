@@ -13,3 +13,6 @@ Test CSS Frameworks
 
 ### Flexbox Grid function + grid + overflow parent
 [Cards](https://suiramus.github.io/ui-test/cards/)
+
+### Masonry + Photoswipe
+[Demo](https://suiramus.github.io/ui-test/masonry-photoswipe/)
