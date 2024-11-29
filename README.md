@@ -16,3 +16,6 @@ Test CSS Frameworks
 
 ### Masonry + Photoswipe
 [Demo](https://suiramus.github.io/ui-test/masonry-photoswipe/)
+
+### Photoswipe Gallery and Photoswipe Single item
+[Demo](https://suiramus.github.io/ui-test/photoswipe-test/)
