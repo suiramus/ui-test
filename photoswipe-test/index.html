@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photoswipe Test</title>
+	<link rel="stylesheet" href="photoswipe/photoswipe.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<h1 class="title">Photoswipe Gallery 5.4.4</h1>
+	<div class="gallery gallery-x">
+		<div class="item"><a href="img/img-01.jpg" data-pswp-width="1280" data-pswp-height="853" data-cropped="true" data-size="1280x853"><img src="img/img-01.jpg"></a></div>
+		<div class="item"><a href="img/img-02.jpg" data-pswp-width="1280" data-pswp-height="1920" data-cropped="true" data-size="1280x1920"><img src="img/img-02.jpg"></a></div>
+		<div class="item"><a href="img/img-03.jpg" data-pswp-width="1280" data-pswp-height="854" data-cropped="true" data-size="1280x854"><img src="img/img-03.jpg"></a></div>
+		<div class="item"><a href="img/img-04.jpg" data-pswp-width="1280" data-pswp-height="1707" data-cropped="true" data-size="1280x1707"><img src="img/img-04.jpg"></a></div>
+		<div class="item"><a href="img/img-05.jpg" data-pswp-width="1280" data-pswp-height="848" data-cropped="true" data-size="1280x848"><img src="img/img-05.jpg"></a></div>
+		<div class="item"><a href="img/img-06.jpg" data-pswp-width="1280" data-pswp-height="853" data-cropped="true" data-size="1280x853"><img src="img/img-06.jpg"></a></div>
+		<div class="item"><a href="img/img-07.jpg" data-pswp-width="1280" data-pswp-height="1835" data-cropped="true" data-size="1280x1835"><img src="img/img-07.jpg"></a></div>
+		<div class="item"><a href="img/img-08.jpg" data-pswp-width="1280" data-pswp-height="1920" data-cropped="true" data-size="1280x1920"><img src="img/img-08.jpg"></a></div>
+		<div class="item"><a href="img/img-09.jpg" data-pswp-width="1280" data-pswp-height="1920" data-cropped="true" data-size="1280x1920"><img src="img/img-09.jpg"></a></div>
+		<div class="item"><a href="img/img-10.jpg" data-pswp-width="1280" data-pswp-height="810" data-cropped="true" data-size="1280x810"><img src="img/img-10.jpg"></a></div>
+		<div class="item"><a href="img/img-11.jpg" data-pswp-width="1280" data-pswp-height="853" data-cropped="true" data-size="1280x853"><img src="img/img-11.jpg"></a></div>
+	</div>
+	
+	<h3 style="text-align:center; margin: 60px 0 20px;">Photoswipe single item</h3>
+	<div class="single-item" style="max-width: 400px; margin: 50px auto;"><a class="bigimage" href="img/img-11.jpg" data-pswp-width="1280" data-pswp-height="853" data-size="1280x853"><img src="img/img-11.jpg"></a></div>
+	<div class="single-item" style="max-width: 400px; margin: 50px auto;"><a class="big" href="img/img-07.jpg" data-pswp-width="1280" data-pswp-height="1835" data-size="1280x1835"><img src="img/img-07.jpg"></a></div>
+
+
+<h1 class="title">Another gallery</h1>
+<div class="gallery gallery-x">
+	<div class="item"><a href="img/img-01.jpg" data-pswp-width="1280" data-pswp-height="853" data-cropped="true" data-size="1280x853"><img src="img/img-01.jpg"></a></div>
+	<div class="item"><a href="img/img-02.jpg" data-pswp-width="1280" data-pswp-height="1920" data-cropped="true" data-size="1280x1920"><img src="img/img-02.jpg"></a></div>
+	<div class="item"><a href="img/img-03.jpg" data-pswp-width="1280" data-pswp-height="854" data-cropped="true" data-size="1280x854"><img src="img/img-03.jpg"></a></div>
+	<div class="item"><a href="img/img-04.jpg" data-pswp-width="1280" data-pswp-height="1707" data-cropped="true" data-size="1280x1707"><img src="img/img-04.jpg"></a></div>
+</div>
+	
+<!-- <script type="module">
+	import PhotoSwipeLightbox from './photoswipe/photoswipe-lightbox.esm.js';
+	const lightbox = new PhotoSwipeLightbox({
+		gallery: '.gallery',
+		children: '.item a',
+		pswpModule: () => import('./photoswipe/photoswipe.esm.js'),
+		bgOpacity: 0.9,
+		loop: false,
+		// padding: { top: 20, bottom: 20, left: 20, right: 20 },
+		// indexIndicatorSep: ' of '
+		// errorMsg: 'The photo cannot be loaded'
+	});
+	lightbox.init();
+	
+	// Single image
+	const lightbox2 = new PhotoSwipeLightbox({
+		gallery: 'a.bigimage, .single-item a',
+		pswpModule: () => import('./photoswipe/photoswipe.esm.js'),
+		bgOpacity: 0.9,
+	});
+	lightbox2.init();
+</script> -->
+
+<script type="module" src="photoswipe-util.js"></script>
+	
+</body>
+</html>
