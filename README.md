@@ -19,3 +19,7 @@ Test CSS Frameworks
 
 ### Photoswipe Gallery and Photoswipe Single item
 [Demo](https://suiramus.github.io/ui-test/photoswipe-test/)
+
+### Snowflake Animation
+[Demo](https://suiramus.github.io/ui-test/snowflake/) 
+[Source] (https://github.com/nextapps-de/snowflake)
