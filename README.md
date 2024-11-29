@@ -22,6 +22,4 @@ Test CSS Frameworks
 
 ### Snowflake Animation
 [Demo](https://suiramus.github.io/ui-test/snowflake/)    
-[Source] (https://github.com/nextapps-de/snowflake){:target="_blank"}
-
-<a href="https://suiramus.github.io/ui-test/snowflake/" target="_blank">Snowflake Demo</a>
+[Source](https://github.com/nextapps-de/snowflake)
