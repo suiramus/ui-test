@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Responsive</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<header id="top-header">
+		<nav id="top-nav">
+			<a href="#" class="logo">SuperLogo</a>
+			<div id="ham"></div>
+			<ul id="top-menu" class="top-menu">
+				<li><a href="#">Home</a></li>
+				<li>
+					<a href="#">Services</a>
+					<ul class="submenu">
+						<li><a href="#">Hero Slider</a>
+							<ul>
+								<li><a href="#">Submenu Three</a></li>
+								<li><a href="#">Another item</a></li>
+								<li><a href="#">Super long</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Best Layouts</a></li>
+						<li><a href="#">A very long item in this beautiful menu</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Products</a>
+					<ul class="submenu">
+						<li><a href="#">Best Value</a></li>
+						<li><a href="#">Popular Products</a></li>
+						<li><a href="#">Promotions</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<style>
+		.content {
+			max-width: 780px;
+			margin-inline: auto;
+			padding-inline: 20px;
+			padding-block: 40px;
+		}
+	</style>
+	<div class="content">
+		<h1>Super menu content</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo enim accusantium. Possimus magnam aspernatur suscipit recusandae tempora, tenetur saepe esse totam at facere asperiores ea autem reprehenderit repellat necessitatibus maiores amet quaerat doloribus assumenda nulla nam? Porro, aliquam. Aspernatur commodi eligendi voluptatibus ex autem sed cupiditate expedita ullam. Saepe!</p>
+	</div><!-- .content -->
+
+<script>
+	let menu = document.getElementById("top-menu");
+	let ham = document.getElementById("ham");
+	
+	ham.addEventListener("click", function(){
+		ham.classList.toggle("close");
+		menu.classList.toggle("menu-open");
+	});
+	
+	
+	/* Inchide meniul cand se da click oriunde in document */
+	document.addEventListener("click", function(event) {
+		if (!menu.contains(event.target) && !ham.contains(event.target)) {
+			menu.classList.remove("menu-open");
+			ham.classList.remove("close");
+		}
+	});
+	
+	// Adaugăm un event listener și pe link-urile din meniu
+	// Inchide meniul cand se da click pe un link din nav
+	let menuLinks = document.querySelectorAll("#top-menu a");
+	menuLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			menu.classList.remove("menu-open");
+			ham.classList.remove("close");
+		});
+	});
+</script>
+
+	
+</body>
+</html>

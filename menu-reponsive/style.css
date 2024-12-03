@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+	
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+:root {
+	--color-primary: hsl(220, 100%, 40%);
+}
+
+body {
+	font-family: "Titillium Web", sans-serif;
+	color: var(--color-default);
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+header#top-header {
+	--color-bg: hsl(0, 0%, 90%);
+	--color-menu-border: rgba(0,0,0,.05);
+	--padding-inline: 20px;
+	background: var(--color-bg);
+}
+
+nav#top-nav {
+	max-width: 900px;
+	margin-inline: auto;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.logo {
+	font-size: 26px;
+	font-weight: 600;
+	padding-left: var(--padding-inline);
+}
+
+#ham {
+	width: 40px;
+	height: 40px;
+	margin-left: auto;
+	cursor: pointer;
+	margin-right: var(--padding-inline);
+	display: none;
+}
+
+#ham {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232854C5'%3E%3Cpath d='M140-254.62v-50.25h680v50.25H140Zm0-200.25v-50.26h680v50.26H140Zm0-200.26v-50.25h680v50.25H140Z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#ham.close {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232854C5'%3E%3Cpath d='m252.62-217.23-35.39-35.39L444.62-480 217.23-707.38l35.39-35.39L480-515.38l227.38-227.39 35.39 35.39L515.38-480l227.39 227.38-35.39 35.39L480-444.62 252.62-217.23Z'/%3E%3C/svg%3E");
+}
+
+nav#top-nav ul {
+	padding: 0;
+	list-style: none;
+}
+
+.top-menu {
+	margin-left: auto;
+	display: flex;
+}
+
+nav a {
+	text-decoration: none;
+	color: inherit;
+	transition: all .3s;
+}
+
+.top-menu a {
+	color: var(--color-primary);
+	display: block;
+}
+
+.top-menu > li > a:hover {
+	background: var(--color-menu-border);
+}
+
+nav li:has(ul) > a::after {
+	content: "+";
+	display: inline-block;
+	margin-left: 6px;
+}
+
+li:has(.submenu) { position: relative; }
+
+li:has(.submenu:hover) a { 
+	
+}
+li:has(.submenu:hover) a:hover {
+}
+
+.submenu {
+	display: none;
+	/* padding-top: 21px; */
+	max-width: max-content;
+	min-width: 200px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transition: all .8s;
+	background: #FFF;
+}
+
+li:has(ul):hover .submenu  {
+	display: block;
+}
+
+@media only screen and (min-width: 801px) {
+	
+	.top-menu > li > a {
+		padding: 20px 16px;
+	}
+	
+	.submenu {
+		border-left: 1px solid var(--color-menu-border);
+		border-right: 1px solid var(--color-menu-border);
+	}
+	
+	.submenu a {
+		padding: 8px 16px;
+		border-bottom: 1px solid var(--color-menu-border);
+	}
+	
+	.submenu {
+		border-top: 2px solid #333;
+		border-bottom: 2px solid #333;
+	}
+	
+	/* Level 3 */
+	.submenu li > ul {
+		position: absolute;
+		left: 100%;
+		top: 0;
+		width: fit-content;
+		max-width: 250px;
+		min-width: 200px;
+		border-left: 1px solid var(--color-menu-border);
+		border-right: 1px solid var(--color-menu-border);
+		display: none;
+	}
+	
+	.submenu li:has(ul) > a::after {
+		content: "»";
+		display: inline-block;
+		position: absolute;
+		right: 10px;
+	}
+	
+	.submenu li:hover ul {
+		display: block;
+	}
+	
+}/* 801px */
+
+@media only screen and (max-width: 800px) {
+	.logo {
+		padding-block: 16px;
+	}
+	
+	#ham {
+		display: block;
+	}
+	
+	.top-menu {
+		display: none;
+	}
+	.top-menu.menu-open {
+		display: block;
+		width: 100%;
+		background: #FFF;
+	}
+	
+	.top-menu a {
+		width: 100%;
+		padding: 8px 20px;
+		border-top: 1px solid var(--color-menu-border);
+	}
+	
+	.top-menu a:hover {
+		background: var(--color-bg);
+	}
+	
+	.top-menu > li:last-child a {
+		border-bottom: 1px solid var(--color-menu-border);
+	}
+	
+	.submenu {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		position: relative;
+	}
+	
+	.submenu a {
+		padding-left: 40px;
+	}
+	
+	.submenu ul a {
+		padding-left: 80px;
+	}
+	
+}/* 800px */
