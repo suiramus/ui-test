@@ -30,3 +30,6 @@ Test CSS Frameworks
 ### Snowflake Animation
 [Demo](https://suiramus.github.io/ui-test/snowflake/)    
 [Source](https://github.com/nextapps-de/snowflake)
+
+### Swiper + Photoswipe
+[Demo](https://suiramus.github.io/ui-test/swiper-photoswipe/)    

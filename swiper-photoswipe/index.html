@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Swiper si Photoswipe</title>
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/photoswipe.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	<div class="section-header">
+		<h2>Integrare Swiper si Photoswipe</h2>
+	</div>
+	
+	<div class="product-gallery">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="img/img-01.jpg" data-pswp-width="1280" data-pswp-height="854">
+						<img src="img/img-01.jpg" alt="Image 1">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="img/img-02.jpg" data-pswp-width="1280" data-pswp-height="853">
+						<img src="img/img-02.jpg" alt="Image 2">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="img/img-03.jpg" data-pswp-width="1280" data-pswp-height="850">
+						<img src="img/img-03.jpg" alt="Image 3">
+					</a>
+				</div>
+				<div class="swiper-slide">
+						<a href="img/img-05.jpg" data-pswp-width="1333" data-pswp-height="2000" data-cropped="true">
+						<img src="img/img-05-thumb.jpg" alt="Image 5"></a>
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="img/img-06.jpg" data-pswp-width="2896" data-pswp-height="3472" data-cropped="true">
+					<img src="img/img-06-thumb.jpg" alt="Image 6"></a>
+				</div>
+			</div> <!-- .swiper-wrapper -->
+			<!-- Add navigation buttons -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div> <!-- .swiper-container -->
+	</div> <!-- .product-gallery -->
+	
+	<div class="section-header">
+		<h2>Doar Swiper</h2>
+	</div>
+	
+	<div class="product-gallery-2">
+		<div class="swiper-container swiper-2">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/img-01.jpg" alt="Image 1">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/img-02.jpg" alt="Image 2">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/img-03.jpg" alt="Image 3">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/img-04.jpg" alt="Image 4">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/img-05.jpg" alt="Image 5">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/img-06.jpg" alt="Image 6">
+				</div>
+			</div> <!-- .swiper-wrapper -->
+			<!-- Add navigation buttons -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div> <!-- .swiper-container -->
+	</div> <!-- .product-gallery-2 -->
+	
+	<div class="section-header">
+		<h2>Doar Photoswipe</h2>
+		<p>Add data-cropped="true" attribute to links that open PhotoSwipe. <a href="https://photoswipe.com/opening-or-closing-transition/#animating-from-cropped-thumbnail" target="_blank">Link</a></p>
+	</div>
+	
+	<div class="gallery">
+		<a href="img/img-01.jpg" data-pswp-width="1280" data-pswp-height="854" data-cropped="true">
+			<img src="img/img-01-thumb.jpg" alt="Image 1"></a>
+		<a href="img/img-02.jpg" data-pswp-width="1280" data-pswp-height="853" data-cropped="true">
+			<img src="img/img-02-thumb.jpg" alt="Image 2"></a>
+		<a href="img/img-03.jpg" data-pswp-width="1280" data-pswp-height="850" data-cropped="true">
+			<img src="img/img-03-thumb.jpg" alt="Image 3"></a>
+		<a href="img/img-04.jpg" data-pswp-width="1281" data-pswp-height="1920" data-cropped="true">
+			<img src="img/img-04-thumb.jpg" alt="Image 4"></a>
+		<a href="img/img-05.jpg" data-pswp-width="1333" data-pswp-height="2000" data-cropped="true">
+			<img src="img/img-05-thumb.jpg" alt="Image 5"></a>
+		<a href="img/img-06.jpg" data-pswp-width="2896" data-pswp-height="3472" data-cropped="true">
+			<img src="img/img-06-thumb.jpg" alt="Image 6"></a>	
+	</div><!-- .gallery -->
+	
+	
+	
+<!-- Scripturi -->
+<script src="js/swiper-bundle.min.js"></script>
+<script type="module" src="js/script.js"></script>
+	
+</body>
+</html>
