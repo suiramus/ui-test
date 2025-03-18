@@ -17,6 +17,10 @@ Test CSS Frameworks
 ### uicore
 [uicore](https://suiramus.github.io/ui-test/uicore/)  
 
+### hotsauce
+[hotsauce](https://suiramus.github.io/ui-test/hotsauce/)
+
+
 ### CSS :has test
 [CSS :has](https://suiramus.github.io/ui-test/has/)  
 
