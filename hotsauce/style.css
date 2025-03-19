@@ -47,6 +47,7 @@ a:not([class]) { text-decoration-skip-ink: auto; color: currentColor; }
 	max-width: var(--width-big);
 	margin-inline: auto;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	height: 6em;
 	font-size: .9rem;
@@ -123,8 +124,93 @@ a.btn.btn-menu:hover {
 	height: 36px;
 	margin-left: auto;
 	cursor: pointer;
-	margin-right: 20px;
-	display: block;
+	display: none;
+}
+
+@media only screen and (max-width: 780px) {
+	
+	.logo {
+		margin-left: 20px;
+	}
+	
+	#ham {
+		display: block;
+		margin-right: 20px;
+	}
+	
+	#menu-action,
+	#top-menu {
+		display: none;
+	}
+	
+	.nav-wrap {
+		padding-inline: 0;
+	}
+	
+	#top-menu.menu-open {
+		display:block;
+		width: 100%;
+	}
+	
+	.top-bar {
+		padding: 30px 0;
+		height: auto;
+	}
+	
+	.menu {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 30px;
+	}
+	
+	.menu li {
+		width: 100%;
+	}
+	
+	.menu a {
+		margin-left: 0;
+		padding: 20px;
+		height: auto;
+		width: 100%;
+		display: block;
+		border-bottom: none;
+		border-left: 4px solid transparent;
+		font-size: 16px;
+	}
+
+	.menu a.active:hover,
+	.menu a.active {
+		border-bottom: none;
+		background: rgba(209 213 219 / .2);
+		border-left: 4px solid var(--color-primary);
+	}
+	
+	.menu a:hover {
+		border-bottom: none;
+		background: rgba(216, 218, 221, 0.452);
+		border-left: 4px solid rgba(73, 73, 73, 0.8);
+	}
+	
+	
+	#menu-action.menu-action-open {
+		display: block;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 0 20px;
+		gap: 10px;
+	}
+	
+	a.btn.btn-menu {
+		padding: .8rem 1.5rem;
+		border-radius: 2rem;
+		margin-left: 0;
+	}
+	
+
 }
 
 #ham {
@@ -181,7 +267,8 @@ section.main {
 }
 
 .hero-title {
-	font-size: 72px;
+	/* font-size: 72px; */
+	font-size: clamp(2.5rem, calc(2.5rem + 1.5vw), 8rem); 
 	line-height: 1;
 	margin-bottom: 2rem;
 	text-align: center;
@@ -244,5 +331,13 @@ a.btn.btn-hero:hover {
 
 .footer a {
 	text-decoration: none;
+}
+
+.social-icons a img {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0 10px;
+	opacity: .6;
 }
 
