@@ -1,0 +1,110 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.wrap {
+	max-width: 1200px;
+	margin-inline: auto;
+	margin-block: 40px;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+}
+
+.bg {
+	max-width: 100%;
+	height: 400px;
+	margin-bottom: 20px;
+}
+
+.bg-1 {
+	 --square-color: #bd0000;
+	--square-size: 10; /* Dimensiunea pătratului */
+	--square-space: 80; /* Distanța dintre pătrate */
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='%23bd0000' fill-opacity='0.05'%3E\ %3Crect width='20' height='20' x='0' y='0'/%3E\ %3C/svg%3E");
+}
+
+.bg-2 {
+	 --square-color: #000000;
+	--square-size: 10; /* Dimensiunea pătratului */
+	--square-space: 80; /* Distanța dintre pătrate */
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='%23000' fill-opacity='0.05'%3E\ %3Crect width='20' height='20' x='0' y='0'/%3E\ %3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23000' fill-opacity='0.05'%3E\ %3Crect width='90' height='90' x='0' y='0'/%3E\ %3C/svg%3E");
+}
+
+.bg-3 {
+	 --square-color: #9c9c9c;
+	--square-size: 10; /* Dimensiunea pătratului */
+	--square-space: 80; /* Distanța dintre pătrate */
+	background-color: var(--square-color);
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='%23FFF' fill-opacity='1.00'%3E\ %3Crect width='35' height='35' x='0' y='0'/%3E\ %3C/svg%3E");
+	background-position: 20px 20px;
+}
+
+.bg-4 {
+	 --color: rgba(0, 0, 0, 0.315);
+	 --size: 14px; /* Spatiu intre linii */
+	/* background-image: 
+	linear-gradient(transparent 11px, rgba(0, 0, 0, 0.315) 12px, transparent 12px),
+	linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.315) 12px, transparent 12px);
+	background-size: 100% 12px, 12px 100%; */
+	background-image: 
+	linear-gradient(transparent 1px, var(--color) 2px, transparent 2px),
+	linear-gradient(90deg, transparent 1px, var(--color) 2px, transparent 2px);
+	background-size: 100% var(--size), var(--size) 100%;
+	/* background-repeat: repeat-y; */
+}
+
+.bg-5 {
+	--color: rgba(58, 58, 58, 0.4);
+	background-image: repeating-linear-gradient(-45deg, var(--color), var(--color) 2px, transparent 2px, transparent 6px);
+	background-size: 3px 3px; 
+}
+
+.bg-6 {
+	background-image: repeating-linear-gradient(-45deg, rgba(58, 58, 58, 0.25), rgba(65, 65, 65, 0.25) 1px, transparent 1px, transparent 6px);
+	background-size: 4px 4px;
+}
+
+.bg-7 {
+	--color: #f0f0f0;
+	--color: rgba(0, 0, 0, 0.055);
+	--color: rgba(173, 0, 0, 0.2);
+	background: 
+	repeating-linear-gradient(90deg, var(--color) 0, var(--color) 5%, transparent 0, transparent 50%) 0 / 15px 15px, 
+	repeating-linear-gradient(180deg, var(--color) 0, var(--color) 5%, transparent 0, transparent 50%) 0 / 15px 15px;
+}
+
+.bg-8 {
+	--color: rgba(0, 0, 0, 0.5);
+	--size: 60px; /* default 15px */
+	background: 
+	repeating-linear-gradient(90deg, var(--color) 0, var(--color) 2%, transparent 0, transparent 50%) 0 / var(--size) var(--size), 
+	repeating-linear-gradient(180deg, var(--color) 0, var(--color) 2%, transparent 0, transparent 50%) 0 / var(--size) var(--size);
+}
+
+.bg-9 {
+	--color: rgba(3, 0, 168, 0.51);
+	background-image: repeating-linear-gradient(-45deg, var(--color), var(--color) 1px, transparent 1px, transparent 2px);
+	background-size: 4px 4px;
+}
+
+.bg-10 {
+	/* Carbon */
+	background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	  background-color: #131313;
+	  background-size: 20px 20px;
+	  background-clip: content-box;
+}
+
+.bg-11 {
+	background: radial-gradient(black 40%, transparent 0) 0 0, radial-gradient(black 40%, transparent 0) 20px 20px, radial-gradient(rgba(255, 255, 255, 0.1) 40%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 40%, transparent 20%) 20px 21px;
+	  background-color: #282828;
+	  background-size: 40px 40px;
+	  background-clip: content-box;
+}
+
+
+

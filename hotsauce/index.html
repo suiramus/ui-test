@@ -17,11 +17,14 @@
 					<h1>Hot Sauce</h1>
 				</a>
 			</div><!-- .logo -->
-			<ul class="menu">
-				<li><a class="active" href="#">Features</a></li>
-				<li><a href="#">Pricing</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+			<div id="top-menu">
+				<ul class="menu">
+					<li><a class="active" href="#">Features</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div id="ham" class="close""></div>
 			<div class="menu-action">
 				<a href="#">Sign in</a>
 				<a href="#" class="btn btn-menu">Get started today</a>
@@ -59,6 +62,38 @@
 			</div><!-- .social-icons -->
 		</div><!-- .footer -->
 	</section>
+	
+	
+<script>
+	let menu = document.getElementById("top-menu");
+	let ham = document.getElementById("ham");
+
+	ham.addEventListener("click", function(){
+		ham.classList.toggle("close");
+		menu.classList.toggle("menu-open");
+	});
+
+
+	/* Inchide meniul cand se da click oriunde in document */
+	document.addEventListener("click", function(event) {
+		if (!menu.contains(event.target) && !ham.contains(event.target)) {
+			menu.classList.remove("menu-open");
+			ham.classList.remove("close");
+		}
+	});
+
+	// Adaugăm un event listener și pe link-urile din meniu
+	// Inchide meniul cand se da click pe un link din nav
+	let menuLinks = document.querySelectorAll("#top-menu a");
+	menuLinks.forEach(function(link) {
+		link.addEventListener("click", function() {
+			menu.classList.remove("menu-open");
+			ham.classList.remove("close");
+		});
+	});
+</script>
+
+	
 	
 </body>
 </html>

@@ -20,6 +20,8 @@ Test CSS Frameworks
 ### hotsauce
 [hotsauce](https://suiramus.github.io/ui-test/hotsauce/)
 
+### css-backgrounds-pattern
+[css-backgrounds](https://suiramus.github.io/ui-test/css-backgrounds/)
 
 ### CSS :has test
 [CSS :has](https://suiramus.github.io/ui-test/has/)  
