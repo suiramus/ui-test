@@ -162,6 +162,7 @@ a.btn.btn-menu:hover {
 		flex-direction: column;
 		width: 100%;
 		padding-top: 30px;
+		border-bottom: 1px solid rgba(0,0,0,.05);
 	}
 	
 	.menu li {
@@ -175,21 +176,22 @@ a.btn.btn-menu:hover {
 		width: 100%;
 		display: block;
 		border-bottom: none;
-		border-left: 4px solid transparent;
+		border-left: 6px solid transparent;
 		font-size: 16px;
+		transition: all .3s;
 	}
 
 	.menu a.active:hover,
 	.menu a.active {
 		border-bottom: none;
 		background: rgba(209 213 219 / .2);
-		border-left: 4px solid var(--color-primary);
+		border-left: 6px solid var(--color-primary);
 	}
 	
 	.menu a:hover {
 		border-bottom: none;
 		background: rgba(216, 218, 221, 0.452);
-		border-left: 4px solid rgba(73, 73, 73, 0.8);
+		border-left: 6px solid rgba(73, 73, 73, 0.8);
 	}
 	
 	
@@ -237,6 +239,12 @@ section.main {
 	overflow: hidden;
 }
 
+@media only screen and (max-width: 1080px) {
+	.hero-wrap {
+		padding: 6rem 2rem;
+	}
+}
+
 .hero-content {
 	position: relative;
 	z-index: 2;
@@ -268,7 +276,8 @@ section.main {
 
 .hero-title {
 	/* font-size: 72px; */
-	font-size: clamp(2.5rem, calc(2.5rem + 1.5vw), 8rem); 
+	font-size: 2rem;
+	font-size: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
 	line-height: 1;
 	margin-bottom: 2rem;
 	text-align: center;
@@ -281,7 +290,8 @@ section.main {
 }
 
 .hero-subtitle {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	font-size: clamp(1.1rem, 1rem + 0.4vw, 1.6rem);
 	line-height: 1.4;
 	color: var(--color-text);
 	text-align: center;
@@ -313,6 +323,26 @@ a.btn.btn-hero {
 a.btn.btn-hero:hover {
 	background: var(--btn-background-hover);
 }
+
+.divx {
+	margin: 20px auto 0;
+	animation: pulse 1600ms infinite;
+	display: block;
+	height: 0em;
+	width: 0em;
+	/* background: red; */
+	border-color: transparent transparent red;
+	border-width: 5px;
+	border-style: solid;
+}
+
+@keyframes pulse {
+	50% {
+		filter: brightness(1.2);
+		transform: 	translate(0, -20px);
+	}
+}
+
 
 /* FOOTER */
 
