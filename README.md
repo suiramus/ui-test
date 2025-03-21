@@ -8,6 +8,9 @@ Test CSS Frameworks
  ### wrapper content	
 [wrapper](https://suiramus.github.io/ui-test/wrapper/)  
 
+ ### Flow Typography	
+[flowtype](https://suiramus.github.io/ui-test/flowtype/)  
+
  ### Menu Responsive	
 [menu demo](https://suiramus.github.io/ui-test/menu-reponsive/)  
 
