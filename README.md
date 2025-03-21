@@ -1,20 +1,20 @@
 # ui-test
  UI Testing
  
- ### test-styles
+### test-styles
 Test CSS Frameworks 	
 [test-styles](https://suiramus.github.io/ui-test/test-styles/)  
 
- ### wrapper content	
+### wrapper content	
 [wrapper](https://suiramus.github.io/ui-test/wrapper/)  
 
- ### Flow Typography	
+### Flow Typography	
 [flowtype](https://suiramus.github.io/ui-test/flowtype/)  
 
- ### Menu Responsive	
+### Menu Responsive	
 [menu demo](https://suiramus.github.io/ui-test/menu-reponsive/)  
 
-  ### Accessible Menu - menu-25
+### Accessible Menu - menu-25
 [menu demo](https://suiramus.github.io/ui-test/menu-25/)  
 
 ### uicore
