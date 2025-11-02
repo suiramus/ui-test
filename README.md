@@ -5,6 +5,9 @@
 Test CSS Frameworks 	
 [test-styles](https://suiramus.github.io/ui-test/test-styles/)  
 
+ ### Fluid typography and image overlap wrapper	
+[wrapper](https://suiramus.github.io/ui-test/fluid-typography/) 
+
  ### wrapper content	
 [wrapper](https://suiramus.github.io/ui-test/wrapper/)  
 
