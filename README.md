@@ -1,24 +1,33 @@
 # ui-test
- UI Testing
+UI Testing
  
- ### test-styles
+### test-styles
 Test CSS Frameworks 	
 [test-styles](https://suiramus.github.io/ui-test/test-styles/)  
 
  ### Fluid typography and image overlap wrapper	
-[wrapper](https://suiramus.github.io/ui-test/fluid-typography/) 
+[fluid-typography](https://suiramus.github.io/ui-test/fluid-typography/) 
 
  ### wrapper content	
 [wrapper](https://suiramus.github.io/ui-test/wrapper/)  
 
- ### Menu Responsive	
+### Flow Typography	
+[flowtype](https://suiramus.github.io/ui-test/flowtype/)  
+
+### Menu Responsive	
 [menu demo](https://suiramus.github.io/ui-test/menu-reponsive/)  
 
-  ### Accessible Menu - menu-25
+### Accessible Menu - menu-25
 [menu demo](https://suiramus.github.io/ui-test/menu-25/)  
 
 ### uicore
 [uicore](https://suiramus.github.io/ui-test/uicore/)  
+
+### hotsauce
+[hotsauce](https://suiramus.github.io/ui-test/hotsauce/)
+
+### css-backgrounds-pattern
+[css-backgrounds](https://suiramus.github.io/ui-test/css-backgrounds/)
 
 ### CSS :has test
 [CSS :has](https://suiramus.github.io/ui-test/has/)  
