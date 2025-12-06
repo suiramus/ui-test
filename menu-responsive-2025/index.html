@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Header Menu Responsive 2025</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', system-ui, sans-serif;
+			line-height: 1.6;
+			background-color: #f8fafc;
+			color: #333;
+		}
+
+		:root {
+			--breakpoint: 800px;
+			--menu-color: #3b82f6;
+		}
+
+		.top-header {
+			background: white;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			position: relative;
+		}
+
+		.header-container {
+			--padding: 20px;
+			max-width: 1024px;
+			margin-inline: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo {
+			font-size: 1.2rem;
+			line-height: 1;
+			letter-spacing: -.5px;
+			font-weight: 600;
+			color: var(--menu-color);
+			text-decoration: none;
+			padding: var(--padding);
+		}
+
+		.top-menu {
+			display: flex;
+			gap: 25px;
+			list-style: none;
+			align-items: center;
+			margin-right: var(--padding);
+		}
+
+		.top-menu > li {
+			position: relative;
+		}
+
+		.top-menu a {
+			text-decoration: none;
+			color: #334155;
+			font-weight: 600;
+			font-size: 1rem;
+			padding: 8px 0;
+			display: flex;
+			align-items: center;
+			transition: color 0.2s;
+		}
+
+		.top-menu a:hover {
+			color: var(--menu-color);
+		}
+
+		/* Indicator submenu cu currentColor */
+		.has-submenu > a::after {
+			content: "";
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-left: 5px;
+			mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat center;
+			background-color: currentColor;
+		}
+
+		/* Submeniu desktop */
+		.submenu {
+			position: absolute;
+			top: 100%;
+			left: -20px;
+			background: white;
+			min-width: 200px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			padding: 10px 0;
+			list-style: none;
+			display: none;
+			z-index: 100;
+		}
+
+		.has-submenu:hover .submenu,
+		.has-submenu:focus-within .submenu {
+			display: block;
+		}
+
+		.submenu li {
+			border-bottom: 1px solid #f1f5f9;
+		}
+
+		.submenu li:last-child,
+		.top-menu > li:last-child {
+			border-bottom: none;
+		}
+
+		.submenu a {
+			padding: 10px 20px;
+			display: block;
+			color: #475569;
+			font-weight: 500;
+			font-size: 0.95rem;
+		}
+
+		.submenu a:hover {
+			background-color: #f8fafc;
+			color: var(--menu-color);
+		}
+
+		/* Buton hamburger */
+		.hamburger-btn {
+			display: none;
+			background: none;
+			border: none;
+			cursor: pointer;
+			width: 32px;
+			height: 32px;
+			padding: 0;
+			margin-right: var(--padding);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23334155' d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 30px;
+		}
+
+		.hamburger-btn.active {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23334155' d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+		}
+
+		/* Responsive */
+		@media (max-width: 800px) {
+
+			.hamburger-btn {
+				display: block;
+			}
+
+			.header-container {
+				flex-wrap: wrap;
+			}
+
+			.top-menu {
+				width: 100%;
+				flex-direction: column;
+				background: white;
+				padding: 0;
+				margin-right: 0;
+				display: none;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				border-top: 1px solid #e2e8f0;
+				gap: 0;
+			}
+
+			.top-menu.active {
+				display: flex;
+			}
+
+			.top-menu > li {
+				width: 100%;
+				border-bottom: 1px solid #f1f5f9;
+			}
+
+			.top-menu a {
+				padding: 15px 20px;
+				width: 100%;
+			}
+
+			.has-submenu > a::after {
+				display: none;
+			}
+
+			/* Submeniu mobil */
+			.submenu {
+				all: unset;
+				display: block;
+				list-style: none;
+				border-top: 1px solid #e2e8f0;
+			}
+
+			.submenu li {
+				border-bottom: 1px solid #e2e8f0;
+			}
+
+			.submenu a {
+				padding: 12px 30px 12px 45px;
+				font-size: 1rem;
+				color: #64748b;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<header class="top-header">
+	<div class="header-container">
+
+		<a href="#" class="logo">My Logo</a>
+
+		<button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu"></button>
+
+		<ul class="top-menu" id="mainMenu">
+			<li><a href="#">Prima pagină</a></li>
+
+			<li class="has-submenu">
+				<a href="#">Servicii</a>
+				<ul class="submenu">
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Hosting</a></li>
+					<li><a href="#">Optimizare SEO</a></li>
+					<li><a href="#">Consultanță</a></li>
+				</ul>
+			</li>
+
+			<li><a href="#">Portofoliu</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</header>
+
+<script>
+	const hamburgerBtn = document.getElementById('hamburgerBtn');
+	const mainMenu = document.getElementById('mainMenu');
+
+	// const BREAKPOINT = 800; // varianta simplă, fără CSS
+	/* Preia direct valoarea din variabila css */
+	const BREAKPOINT = parseInt(
+		getComputedStyle(document.documentElement).getPropertyValue("--breakpoint")
+	);
+	
+	/* 
+		// Citește --breakpoint din CSS; dacă nu există, folosește 800 ca fallback.
+		const BREAKPOINT = (() => {
+			const cssValue = getComputedStyle(document.documentElement)
+				.getPropertyValue("--breakpoint")
+				.trim();
+			const numeric = parseInt(cssValue, 10);
+			// dacă variabila nu există, e goală sau nu e număr -> fallback 800
+			return Number.isFinite(numeric) ? numeric : 800;
+		})();
+	*/
+
+	function closeMenu() {
+		hamburgerBtn.classList.remove('active');
+		mainMenu.classList.remove('active');
+		hamburgerBtn.setAttribute("aria-expanded", "false");
+	}
+
+	hamburgerBtn.addEventListener('click', function (e) {
+		e.stopPropagation();
+		this.classList.toggle('active');
+		mainMenu.classList.toggle('active');
+		this.setAttribute("aria-expanded", this.classList.contains("active"));
+	});
+
+	mainMenu.addEventListener('click', function (e) {
+		if (e.target.tagName === 'A' && window.innerWidth <= BREAKPOINT) {
+			setTimeout(closeMenu, 100);
+		}
+	});
+
+	document.addEventListener('click', function (e) {
+		if (window.innerWidth <= BREAKPOINT &&
+			!mainMenu.contains(e.target) &&
+			!hamburgerBtn.contains(e.target) &&
+			mainMenu.classList.contains('active')) {
+			closeMenu();
+		}
+	});
+
+	window.addEventListener('resize', function () {
+		if (window.innerWidth > BREAKPOINT) {
+			closeMenu();
+		}
+	});
+</script>
+</body>
+</html>
