@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Submenu - Accessible</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		:focus {
+			outline: 3px solid #0066cc;
+			outline-offset: 2px;
+		}
+
+		.submenu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+
+		.submenu.open {
+			display: block;
+		}
+
+		.submenu li {
+			position: relative;
+		}
+
+		.submenu .submenu {
+			top: 0;
+			left: 100%;
+		}
+
+		.dropdown > button {
+			background: none;
+			border: none;
+		 padding: 0;
+			color: inherit;
+		 font: inherit;
+		 cursor: pointer;
+		}
+
+		.dropdown > button::after {
+			content: " ▼";
+		 font-size: 0.7em;
+		}
+
+		.dropdown[aria-expanded="true"] > button::after {
+			content: " ▲";
+		}
+
+		.skip-link {
+			position: absolute;
+			top: -100px;
+			left: 0;
+			background: #000;
+			color: #fff;
+			padding: 8px 16px;
+			z-index: 1000;
+			text-decoration: none;
+		}
+
+		.skip-link:focus {
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	
+	<a href="#main-content" class="skip-link">Skip to main content</a>
+
+	<nav role="navigation" aria-label="Main navigation">
+		<div class="logo">
+			<strong><a href="#">Logo</a></strong>
+		</div>
+		<ul role="menubar">
+			<li role="none">
+				<a href="#" role="menuitem">Home</a>
+			</li>
+			<li class="dropdown" role="none" aria-haspopup="true">
+				<button role="menuitem" aria-expanded="false" aria-controls="products-submenu">
+					Products
+				</button>
+				<ul id="products-submenu" class="submenu" role="menu" aria-label="Products submenu">
+					<li role="none"><a href="#" role="menuitem">Beautiful product</a></li>
+					<li role="none"><a href="#" role="menuitem">Marketing</a></li>
+					<li role="none"><a href="#" role="menuitem">Analytics</a></li>
+					<li role="none"><a href="#" role="menuitem">Web Design & UX Design</a></li>
+				</ul>
+			</li>
+			<li class="dropdown" role="none" aria-haspopup="true">
+				<button role="menuitem" aria-expanded="false" aria-controls="services-submenu">
+					Services
+				</button>
+				<ul id="services-submenu" class="submenu" role="menu" aria-label="Services submenu">
+					<li role="none"><a href="#" role="menuitem">SEO & Optimization</a></li>
+					<li role="none"><a href="#" role="menuitem">Maintenance</a></li>
+					<li role="none"><a href="#" role="menuitem">Web Strategy</a></li>
+				</ul>
+			</li>
+			<li role="none">
+				<a href="#" role="menuitem">Contact</a></li>
+			</li>
+		</ul>
+	</nav>
+
+	<main id="main-content" tabindex="-1">
+		<h1>Main Content</h1>
+		<p>Press Tab to navigate the menu, Enter to activate items, and use arrow keys in submenus.</p>
+	</main>
+
+	<script>
+		document.addEventListener('keydown', function(e) {
+			const dropdowns = document.querySelectorAll('.dropdown');
+			const activeElement = document.activeElement;
+			let currentDropdown = null;
+
+			dropdowns.forEach(function(dropdown) {
+				if (dropdown.contains(activeElement)) {
+					currentDropdown = dropdown;
+				}
+			});
+
+			if (e.key === 'Enter' || e.key === ' ') {
+				if (activeElement.tagName === 'BUTTON' && activeElement.getAttribute('aria-expanded')) {
+					e.preventDefault();
+					const expanded = activeElement.getAttribute('aria-expanded') === 'true';
+				 activeElement.setAttribute('aria-expanded', !expanded);
+					const submenuId = activeElement.getAttribute('aria-controls');
+					const submenu = document.getElementById(submenuId);
+					if (submenu) {
+						submenu.classList.toggle('open', !expanded);
+						if (!expanded) {
+							const firstLink = submenu.querySelector('a');
+							if (firstLink) firstLink.focus();
+						}
+					}
+				}
+			}
+
+			if (e.key === 'Escape' && currentDropdown) {
+				const button = currentDropdown.querySelector('button');
+				const submenu = currentDropdown.querySelector('.submenu.open');
+				if (submenu) {
+					submenu.classList.remove('open');
+					button.setAttribute('aria-expanded', 'false');
+					button.focus();
+				}
+			}
+
+			if (e.key === 'ArrowDown' && currentDropdown) {
+				const button = currentDropdown.querySelector('button');
+				if (activeElement === button) {
+					e.preventDefault();
+					const submenuId = button.getAttribute('aria-controls');
+					const submenu = document.getElementById(submenuId);
+					if (submenu) {
+						button.setAttribute('aria-expanded', 'true');
+						submenu.classList.add('open');
+						const firstLink = submenu.querySelector('a');
+						if (firstLink) firstLink.focus();
+					}
+				}
+			}
+		});
+
+		document.addEventListener('click', function(e) {
+			if (!e.target.closest('.dropdown')) {
+				document.querySelectorAll('.submenu.open').forEach(function(submenu) {
+					submenu.classList.remove('open');
+				});
+				document.querySelectorAll('.dropdown button').forEach(function(button) {
+					button.setAttribute('aria-expanded', 'false');
+				});
+			}
+		});
+	</script>
+
+</body>
+</html>
